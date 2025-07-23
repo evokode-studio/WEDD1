@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Confirmación de asistencia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="confirmation">
+    <div class="confirmation__container">
+
+      <h2 class="confirmation__greeting">¡Hola!</h2>
+      <h1 class="confirmation__title">Confirmación de asistencia</h1>
+
+      <p id="passInfo" class="confirmation__pass-info">
+        <!-- Aquí se mostrará: "Tienes derecho a 2 pases" -->
+      </p>
+
+      <form id="confirmationForm">
+        <!-- ¿Asistirá el invitado principal? -->
+        <div class="confirmation__group">
+          <label for="attending">¿Asistirás?</label>
+          <select id="attending" required>
+            <option value="">Selecciona una opción</option>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <!-- ¿Asistirán acompañantes? -->
+        <div class="confirmation__group" id="companionsQuestion" style="display: none;">
+          <label for="companionsComing">¿Asistirá tu(s) acompañante(s)?</label>
+          <select id="companionsComing">
+            <option value="">Selecciona una opción</option>
+            <option value="Sí">Sí</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+
+        <!-- Nombres de acompañantes -->
+        <div class="confirmation__group" id="companionsContainer" style="display: none;">
+          <!-- Inputs generados desde JS -->
+        </div>
+
+        <!-- Botón enviar -->
+        <button type="submit" class="confirmation__submit">Enviar confirmación</button>
+
+        <p id="confirmationMessage" class="confirmation__message"></p>
+      </form>
+
+    </div>
+  </section>
+
+  <script src="./assets/js/confirmation.js"></script>
+</body>
+</html>

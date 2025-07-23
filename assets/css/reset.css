@@ -1,0 +1,64 @@
+/*El asterisco funciona para darle una etiqueta a todo*/
+/*Este reset funciona para eliminar el formato pred que se tiene*/
+*{
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+/*La coma es para saber a cuales debe de aplicarse, para varios*/
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    /*compatibilidad para todos los navegadores
+    Tambien se puede entrar a Can i Use .css y buscar
+    La compatibilidad*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    /*La altura minima sera del 100 de altura vertical del navegador*/
+    min-height:100vh;
+    /*si hay algun ancla el movimiento sera suavizado */
+    scroll-behavior: smooth;
+    /*Para que el renderizado de fuentes sea rapido*/
+    text-rendering: optimizeSpeed;
+    /*Por defecto*/
+    line-height:1.5;
+}
+ul,ol{
+    list-style: none;
+}
+
+a{
+    /*Para manipularlo y trabajarlo como si fuera una caja*/
+    display: block;
+    text-decoration: none;
+}
+
+/*Si yo tengo un parrafo y dentro tengo un link*/
+p a{
+    /*Para que no se produzca un salto de linea
+    dentro del parrafo por display:block*/
+    display: inline;
+}
+img,video,iframe,picture,figure{
+    display: block;
+    /**/
+    max-width: 100%;
+}
+
+/*a todos estos los aplico pq normalmente se cambian*/
+form,input,select,textarea,button,label{
+    display: block;
+    /*Para que lo hereden del padre*/
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}

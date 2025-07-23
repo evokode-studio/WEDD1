@@ -1,0 +1,77 @@
+/*VARIABLES*/
+:root {
+    --mx-width: 1320px;
+    --color-strong:#383816;
+    --color-title: #414141;
+    --color-line: #E5E5E5;
+    --color-hover: #D4AF37;
+    --color-detail: #F6F1E9;
+    --color-letters: #a5a4a4;
+    --color-layout: #fcfaf6;
+    --color-back: #585858;
+    --color-text-body: #525260;
+
+}
+
+/*ESTILOS GENERALES*/
+html {
+    font-size: 62.5%;
+    /*definimos el rem*/
+    overflow-x: hidden;
+    /*esto significa que todo lo que sobre salga en x se esconda*/
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*ESTRUCTURA LAYOUT*/
+
+.layout {
+    width: 100%;
+    /* ocupa todo el ancho disponible */
+    /* nunca pasa de tu variable (1320px) */
+
+    min-width: auto;
+    /* quita el min-width:1200px original */
+    box-sizing: border-box;
+    /* paddings/borders no suman ancho extra */
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/*MENU RESPONSIVE*/
+
+
+.menu-mobile {
+
+    visibility: hidden;
+    opacity: 0;
+
+    position: fixed;
+    z-index: 10;
+}
+
+/*MENU*/
+/*TITULO*/
+/*COUNTDOWN*/
+/*PHRASE*/
+/*IMAGES*/
+/*STORY*/
+/*WW*/
+/*INFO*/
+/*SCHEDULE*/
+/*WEEKND*/
+/*FRIENDS*/
+/*SEATS*/
+/*FAQs*/
+/*LEAVE A MESSAGE*/
+/*RSVP*/  
+/*FOOTER*/          
+
+   
