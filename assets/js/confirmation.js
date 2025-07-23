@@ -31,6 +31,7 @@ const invitados = [
   { codigo: "MIG121", nombre: "Miguel Bravo", pases: 2 }
 ];
 
+
 const params = new URLSearchParams(window.location.search);
 const codigo = params.get('codigo');
 const invitado = invitados.find(i => i.codigo === codigo);
@@ -84,32 +85,32 @@ if (!invitado) {
   form.addEventListener('submit', async e => {
     e.preventDefault();
 
-    const asiste = attendingSelect.value;
+    const asistira = attendingSelect.value;
     const vanAcompanantes = companionsComingSelect.value;
-    const nombresAcompanantes = [];
+    const acompanantes = [];
 
     if (vanAcompanantes === 'Sí') {
       const inputs = companionsContainer.querySelectorAll('input');
       inputs.forEach(input => {
-        if (input.value.trim()) nombresAcompanantes.push(input.value.trim());
+        if (input.value.trim()) acompanantes.push(input.value.trim());
       });
     }
 
-    const numeroAcompanantes = nombresAcompanantes.length;
+    const numAsistentes = 1 + acompanantes.length;
 
     const confirmacion = {
       codigo: invitado.codigo,
       nombre: invitado.nombre,
-      asiste,
-      numeroAcompanantes,
-      nombresAcompanantes,
-      comentarios: "" // Puedes dejar esto si tu hoja espera esa columna
+      asistira,
+      numAsistentes,
+      acompanantes: acompanantes.join(', '),
+      comentarios: ""
     };
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbxYcCSHWKc2VV5NXfL0xYod44-4ZVTaMjSApcy6946Y6n09gAJ6SIm4epdySOPDmD2e/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbw0N7F4A6JDcczEyBf_c0Qj3ZMONKvaIqdavkknOdpQUNTGKBBy96I8olaTtoFHIzGd/exec', {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json'
         },
