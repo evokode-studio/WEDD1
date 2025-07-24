@@ -107,7 +107,7 @@ if (!invitado) {
     };
 
     try {
-      const response = await fetch('https://script.google.com/macros/s/AKfycbxm1yPwUE-bMnrIEGgUcyLJWu3INgQyY07qGeFSobGDAjIJb33zEsl03cxFYUSszJw/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbyXGu8qnwdzm2McXDc3gVRgHb8Jy3B9NHqHsInsfJ6pcv-FGIVEFAR36CESllvjoWpu/exec', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
