@@ -108,7 +108,7 @@ if (!invitado) {
     };
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbw0N7F4A6JDcczEyBf_c0Qj3ZMONKvaIqdavkknOdpQUNTGKBBy96I8olaTtoFHIzGd/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbyXZa14D2m45SeAsdf-rB1aPYZ67XipNtO7K-N_hehUfEmmqbvdPxOFBm8wVC15nW8/exec', {
         method: 'POST',
         mode: 'cors',
         headers: {

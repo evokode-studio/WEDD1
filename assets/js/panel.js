@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tableBody = document.getElementById("panelTableBody");
 
   // URL del Web App desplegado desde Apps Script (asegúrate que sea el correcto y con permisos públicos)
-  const scriptURL = 'https://script.google.com/macros/s/AKfycbw0N7F4A6JDcczEyBf_c0Qj3ZMONKvaIqdavkknOdpQUNTGKBBy96I8olaTtoFHIzGd/exec';
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyXZa14D2m45SeAsdf-rB1aPYZ67XipNtO7K-N_hehUfEmmqbvdPxOFBm8wVC15nW8/exec';
 
   fetch(scriptURL)
     .then(response => {
