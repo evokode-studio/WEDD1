@@ -100,35 +100,34 @@ if (!invitado) {
 
     const confirmacion = {
       codigo: invitado.codigo,
-      nombre: invitado.nombre,
       asistira,
-      numAsistentes,
-      acompanantes: acompanantes.join(', '),
+      acompanantes: acompanantes.length,
+      nombresAcompanantes: acompanantes.join(', '),
       comentarios: ""
     };
 
     try {
-      await fetch('https://script.google.com/macros/s/AKfycbwRPYcjKnvBvEvmWKqy8Nue1EjAoOKl8To1kuTFg7xGFrc_RSXxPXDyHsDfuUIWHBxN/exec', {
+      const response = await fetch('https://script.google.com/macros/s/AKfycbxm1yPwUE-bMnrIEGgUcyLJWu3INgQyY07qGeFSobGDAjIJb33zEsl03cxFYUSszJw/exec', {
         method: 'POST',
-        mode: 'cors',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(confirmacion)
       });
 
-      confirmationMessage.style.color = 'green';
-      confirmationMessage.textContent = '¡Gracias por confirmar!';
+      const data = await response.json();
 
-      form.reset();
-      companionsContainer.innerHTML = '';
-      companionsContainer.style.display = 'none';
-      companionsQuestion.style.display = 'none';
+      if (data.status === 'ok') {
+        console.log("Confirmación exitosa");
+        // Aquí podrías redirigir, mostrar un mensaje, etc.
+      } else {
+        console.error("Error del servidor:", data.message);
+        alert("Hubo un problema: " + data.message);
+      }
 
     } catch (error) {
-      confirmationMessage.style.color = 'red';
-      confirmationMessage.textContent = 'Hubo un error al enviar la confirmación.';
-      console.error('Error al enviar:', error);
+      console.error("Error de red:", error);
+      alert("Error al enviar datos. Intenta de nuevo.");
     }
   });
 }
